@@ -1,0 +1,1 @@
+kill -HUP $(cat var/run/test-api.pid)

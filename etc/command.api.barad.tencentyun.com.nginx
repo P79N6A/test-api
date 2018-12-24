@@ -1,0 +1,17 @@
+upstream command_api {
+            server 127.0.0.1:2500;
+    }
+
+
+server {
+    listen 80;
+    server_name command.api.barad.tencentyun.com command.api.barad.isd.com;
+    access_log logs/command.api.barad.tencentyun.com-access.log;
+    error_log logs/command.api.barad.tencentyun.com-error.log;
+    location / {
+        proxy_pass http://command_api;
+        proxy_buffering off;
+        proxy_set_header X-FORWARDED-FOR $remote_addr;
+        proxy_set_header Host $http_host;
+    }
+}

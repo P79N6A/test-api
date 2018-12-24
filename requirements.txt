@@ -1,0 +1,8 @@
+Django==1.7.1
+gunicorn
+#need install yum install python-devel
+MySQL-python==1.2.5
+django-cors-headers
+gevent
+logstash_formatter==0.5.14
+requests==2.11.0
